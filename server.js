@@ -1,5 +1,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path");
+
+// Fix path resolution for deployment
+const isProduction = process.env.NODE_ENV === 'production';
+if (isProduction) {
+  // Log current working directory for debugging
+  console.log('Current working directory:', process.cwd());
+  console.log('__dirname:', __dirname);
+  
+  // Set working directory to the correct location
+  process.chdir(__dirname);
+  console.log('Changed working directory to:', process.cwd());
+}
+
 const dbConnect = require("./src/config/dbConnect");
 const cors = require("cors");
 const { startEmailScheduler } = require('./src/services/emailScheduler');

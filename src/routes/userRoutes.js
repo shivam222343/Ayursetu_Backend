@@ -1,7 +1,7 @@
 const express = require("express");
-const {verifyToken} = require("../middleware/authMiddleware.js");
-const {authorizeRoles} = require("../middleware/roleMiddleware.js");
-const { getUserProfile, updateUserProfile } = require("../controllers/userController.js");
+const verifyToken = require("../middleware/authMiddleware");
+const authorizeRoles = require("../middleware/roleMiddleware");
+const { getUserProfile, updateUserProfile } = require("../controllers/userController");
 
 const router = express.Router();
 

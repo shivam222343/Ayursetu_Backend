@@ -2,7 +2,7 @@
   "name": "ayursetu",
   "version": "1.0.0",
   "description": "The theorepy shceduling advanced system.",
-  "main": "server.js",
+  "main": "start.js",
   "type": "commonjs",
   "scripts": {
     "start": "node start.js",
