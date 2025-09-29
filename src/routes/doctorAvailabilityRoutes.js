@@ -6,7 +6,7 @@ const {
   getAvailableSlots,
   addSpecialDate
 } = require('../controllers/doctorAvailabilityController');
-const authMiddleware = require('../middleware/authMIddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
 // Get doctor's availability schedule (public)
 router.get('/:doctorId', getDoctorAvailability);
