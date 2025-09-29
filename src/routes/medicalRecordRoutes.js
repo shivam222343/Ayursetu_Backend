@@ -14,10 +14,10 @@ const {
   updateSectionItem,
   deleteSectionItem
 } = require('../controllers/medicalRecordController');
-const protect = require('../middleware/authMiddleware');
+const verifyToken = require('../middleware/authMiddleware');
 
 // All routes require authentication
-router.use(protect);
+router.use(verifyToken);
 
 // Get complete medical record
 router.get('/', getMedicalRecord);

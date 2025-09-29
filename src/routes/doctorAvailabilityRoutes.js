@@ -6,7 +6,7 @@ const {
   getAvailableSlots,
   addSpecialDate
 } = require('../controllers/doctorAvailabilityController');
-const authMiddleware = require('../middleware/authMiddleware');
+const verifyToken = require('../middleware/authMiddleware');
 
 // Get doctor's availability schedule (public)
 router.get('/:doctorId', getDoctorAvailability);
@@ -15,9 +15,9 @@ router.get('/:doctorId', getDoctorAvailability);
 router.get('/:doctorId/slots/:date', getAvailableSlots);
 
 // Update doctor's availability (protected route)
-router.put('/:doctorId', authMiddleware, updateDoctorAvailability);
+router.put('/:doctorId', verifyToken, updateDoctorAvailability);
 
 // Add special date (holiday/leave)
-router.post('/:doctorId/special-date', authMiddleware, addSpecialDate);
+router.post('/:doctorId/special-date', verifyToken, addSpecialDate);
 
 module.exports = router;
