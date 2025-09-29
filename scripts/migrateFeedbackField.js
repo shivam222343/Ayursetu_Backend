@@ -5,7 +5,7 @@ dotenv.config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI || "mongodb+srv://dombeshivam80_db_user:AyurSetu@cluster0.5a6ny7q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     console.log('MongoDB connected for migration');
   } catch (error) {
     console.error('MongoDB connection error:', error);

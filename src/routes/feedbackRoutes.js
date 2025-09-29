@@ -1,6 +1,6 @@
 const express = require('express');
-const { submitFeedback, getFeedbackByAppointment, getPractitionerFeedback } = require('../controllers/feedbackController.js');
-const verifyToken = require('../middleware/authMiddleware.js');
+const { submitFeedback, getFeedbackByAppointment, getPractitionerFeedback } = require('../controllers/feedbackController');
+const verifyToken = require('../middleware/authMiddleware');
 
 const router = express.Router();
 

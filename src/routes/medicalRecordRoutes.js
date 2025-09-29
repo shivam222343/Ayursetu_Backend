@@ -13,8 +13,8 @@ const {
   addSectionData,
   updateSectionItem,
   deleteSectionItem
-} = require('../controllers/medicalRecordController.js');
-const protect = require('../middleware/authMiddleware.js');
+} = require('../controllers/medicalRecordController');
+const protect = require('../middleware/authMiddleware');
 
 // All routes require authentication
 router.use(protect);
