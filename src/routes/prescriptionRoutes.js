@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('../middleware/authMiddleware');
+const verifyToken = require('../middleware/authMiddleware.js');
 const {
   createPrescription,
   getPatientPrescriptions,
@@ -11,7 +11,7 @@ const {
   addPatientNotes,
   getActiveMedications,
   getLifestylePrescriptions
-} = require('../controllers/prescriptionController');
+} = require('../controllers/prescriptionController.js');
 
 // Create new prescription (doctors only)
 router.post('/', verifyToken, createPrescription);
